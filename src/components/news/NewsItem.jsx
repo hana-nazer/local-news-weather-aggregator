@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function NewsItem({ title, description, url, image, publishedAt }) {
