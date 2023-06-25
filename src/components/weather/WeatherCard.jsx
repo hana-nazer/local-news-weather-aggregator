@@ -1,12 +1,13 @@
 import React from "react";
 import moment from "moment";
+import bgImg from '../../images/background.png'
 
 function WeatherCard({ weatherData }) {
   return (
     <div className="relative">
       {/* Weather Card */}
       <div className="absolute inset-0 z-10 flex items-center justify-center h-screen bg-weather-blue">
-      <div className="w-3/4 p-8 mx-3 text-center rounded-md md:w-1/2 h-1/2 lg:w-1/2 opacity-80 bg-[url('D:/entri-test/public/background.png')]">
+      <div className="w-3/4 p-8 mx-3 text-center rounded-md md:w-1/2 h-1/2 lg:w-1/2 opacity-80" style={{ backgroundImage: `url(${bgImg})` }}>
           {/* Location */}
           <p className="text-2xl text-white lg:text-4xl md:text-3xl">
             {weatherData.name}
