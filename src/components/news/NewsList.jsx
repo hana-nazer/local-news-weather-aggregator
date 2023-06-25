@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import Languages from "./Languages";
-import NewsItem from "./NewsItem";
-import { getNews } from "../../services/news-service";
+import Languages from './Languages'
+import NewsItem from './NewsItem'
+import { getNews } from "../../services/news-service"; 
 
 function NewsList() {
   // State variables
-  const [articles, setArticles] = useState(["asd"]);
+  const [articles, setArticles] = useState([]);
   const [search, setSearch] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("");
 
@@ -44,7 +44,7 @@ function NewsList() {
   return (
     <>
       {/* Search bar and language selection */}
-      <div className="flex justify-end px-12 pt-3">
+      <div className="flex justify-between px-5 mt-2 md:px-10 md:justify-end">
         <div className="relative">
           <input
             type="text"
@@ -59,6 +59,33 @@ function NewsList() {
               style={{ cursor: "pointer", marginTop: "0.3rem" }}
             />
           </button>
+        </div>
+        {/* Replace Languages component with your actual implementation */}
+        <Languages onLanguageChange={handleLanguageChange} />
+      </div>
+
+      {/* Container for displaying news articles */}
+      <div className="container flex items-center justify-center mx-auto">
+        <div className="">
+          {articles.length > 0 ? (
+            <div className=""> 
+              {/* Replace NewsItem component with your actual implementation */}
+             {articles.map((article) => (
+                <NewsItem
+                  key={article.url}
+                  title={article.title}
+                  description={article.description}
+                  url={article.url}
+                  image={article.image}
+                  publishedAt={article.publishedAt}
+                />
+              ))} 
+          </div>
+          ) 
+          : (
+            <p className="mt-8 text-center">No news found</p>
+          ) 
+          }
         </div>
         {/* Replace Languages component with your actual implementation */}
         <Languages onLanguageChange={handleLanguageChange} />
