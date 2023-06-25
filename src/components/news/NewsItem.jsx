@@ -32,7 +32,6 @@ function NewsItem({ title, description, url, image, publishedAt }) {
                   </a>
                 </p>
               </div>
-
               {/* Description */}
               <div className="hidden row-span-1 pt-4 sm:hidden md:hidden lg:block">
                 <p>{description}</p>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import Languages from './Languages'
-import NewsItem from './NewsItem'
-import { getNews } from "../../services/news-service"; 
+import Languages from "./Languages";
+import NewsItem from "./NewsItem";
+import { getNews } from "../../services/news-service";
 
 function NewsList() {
   // State variables
@@ -60,43 +60,14 @@ function NewsList() {
             />
           </button>
         </div>
-        {/* Replace Languages component with your actual implementation */}
+        {/* language component */}
         <Languages onLanguageChange={handleLanguageChange} />
       </div>
-
-      {/* Container for displaying news articles */}
-      <div className="">
-        <div className="flex items-center justify-center m-auto">
-          {articles.length > 0 ? (
-            <div className=""> 
-              {/* Replace NewsItem component with your actual implementation */}
-             {articles.map((article) => (
-                <NewsItem
-                  key={article.url}
-                  title={article.title}
-                  description={article.description}
-                  url={article.url}
-                  image={article.image}
-                  publishedAt={article.publishedAt}
-                />
-              ))} 
-          </div>
-          ) 
-          : (
-            <p className="mt-8 text-center">No news found</p>
-          ) 
-          }
-        </div>
-        {/* Replace Languages component with your actual implementation */}
-        <Languages onLanguageChange={handleLanguageChange} />
-      </div>
-
       {/* Container for displaying news articles */}
       <div className="container mx-auto mt-20">
-        {/* <div className="border"> */}
         {articles.length > 0 ? (
           <div className="flex flex-col items-center justify-center m-auto">
-            {/* Replace NewsItem component with your actual implementation */}
+            {/* NewsItem component  */}
             {articles.map((article) => (
               <NewsItem
                 key={article.url}
@@ -111,7 +82,6 @@ function NewsList() {
         ) : (
           <p className="mt-8 text-center">No news found</p>
         )}
-        {/* </div> */}
       </div>
     </>
   );
