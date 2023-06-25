@@ -44,7 +44,7 @@ function NewsList() {
   return (
     <>
       {/* Search bar and language selection */}
-      <div className="flex justify-between px-5 mt-2 md:px-10 md:justify-end">
+      <div className="flex justify-between px-5 m-auto mt-2 md:px-10 md:justify-end ">
         <div className="relative">
           <input
             type="text"
@@ -65,8 +65,8 @@ function NewsList() {
       </div>
 
       {/* Container for displaying news articles */}
-      <div className="container flex items-center justify-center mx-auto">
-        <div className="">
+      <div className="">
+        <div className="flex items-center justify-center m-auto">
           {articles.length > 0 ? (
             <div className=""> 
               {/* Replace NewsItem component with your actual implementation */}

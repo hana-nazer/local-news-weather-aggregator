@@ -10,7 +10,7 @@ function NewsItem({ title, description, url, image, publishedAt }) {
 
   return (
     <>
-      <div className="w-3/4 mt-10 transition border rounded-lg shadow-sm hover:shadow-lg">
+      <div className="w-3/4 m-auto mt-10 transition border rounded-lg shadow-sm hover:shadow-lg">
         <div className="grid grid-cols-2 gap-2 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2">
           {/* Image */}
           <div className="flex items-center justify-center col-span-2 lg:col-span-1">
