@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function NewsItem({ title, description, url, image, publishedAt }) {
@@ -11,11 +10,19 @@ function NewsItem({ title, description, url, image, publishedAt }) {
 
   return (
     <>
-      <div className="w-3/4 mt-10 border rounded-lg">
-        <div className="grid grid-cols-4 p-4">
+      <div className="w-3/4 mt-10 transition border rounded-lg shadow-sm hover:shadow-lg">
+        <div className="grid grid-cols-2 gap-2 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2">
+          {/* Image */}
+          <div className="flex items-center justify-center col-span-2 lg:col-span-1">
+            <img
+              src={image}
+              alt="not found"
+              className="object-cover w-[400px] h-[200px]"
+            />
+          </div>
           {/* Content */}
           <div className="col-span-3">
-            <div className="grid grid-rows-2">
+            <div className="flex flex-col">
               {/* Title */}
               <div className="row-span-1">
                 <p className="text-2xl font-bold">
@@ -27,25 +34,14 @@ function NewsItem({ title, description, url, image, publishedAt }) {
               </div>
 
               {/* Description */}
-              <div className="row-span-1">
+              <div className="hidden row-span-1 pt-4 sm:hidden md:hidden lg:block">
                 <p>{description}</p>
+              </div>
+              <div>
+                <p>{formattedDate}</p>
               </div>
             </div>
           </div>
-
-          {/* Image */}
-          <div className="col-span-1">
-            <img
-              src={image}
-              alt="not found"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        </div>
-
-        {/* Published date */}
-        <div>
-          <p>{formattedDate}</p>
         </div>
       </div>
     </>
