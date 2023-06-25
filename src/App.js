@@ -1,7 +1,10 @@
+import WeatherData from "./components/weather/weatherData";
+
 function App() {
   return (
     <>
-      <p>Hello world</p>
+      {/* Render the WeatherData component */}
+      <WeatherData />
     </>
   );
 }
