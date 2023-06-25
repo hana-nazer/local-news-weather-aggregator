@@ -30,9 +30,9 @@ function WeatherData() {
     <>
       {/* Conditional rendering based on whether weather data is available */}
       {typeof data.main !== "undefined" ? (
-        <WeatherCard weatherData={data} /> // Render the WeatherCard component with weather data
+        <WeatherCard weatherData={data} /> 
       ) : (
-        <div>Something went wrong!</div> // Render an error message if weather data is undefined
+        <div>Something went wrong!</div> 
       )}
     </>
   );
